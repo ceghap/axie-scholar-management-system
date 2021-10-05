@@ -1,37 +1,31 @@
-# ASG Leaderboard
+# Axie scholar management system
 
-Leaderboard: A SLP leaderboard & An MMR Leaderboard – This one is relatively simple; I already have the API endpoints
+## User Story
 
-## Notes
+- Manager can add new scholar
+- Manager can edit scholar
+- Manager can delete scholar
+- Public can see current leaderboard
 
-- For the APIs – I already have everything; its pretty straightforward to consume.
-- One thing to keep in mind is that Axie Infinity no longer track historical data ( win/rate data, etc... ) so for those each app will need to have its own DB. I like the way axie.watch does it with the "upload to cloud" button/feature.
-- Login will be used just to keep track of the ronin address a user want to track
+## Getting started
+
+- Clone this repository `git clone https://github.com/ceghap/axie-scholar-management-system.git`
+- Go to this project folder `axie-scholar-management-system` and install nodejs dependency `yarn`
+-
 
 ## API Endpoints
 
-- Postman Library will be provided (KIV)
+[Lunarciaproxy](https://api.lunaciaproxy.cloud)
 
-```
-https://game-api.axie.technology/api/v1/0xRONIN_ADDRESS
-https://game-api.axie.technology/slp/0xRONIN_ADDRESS
-https://game-api.axie.technology/mmr/0xRONIN_ADDRESS
+## Wallet address
 
-https://game-api.axie.technology/api/v1/ronin:RONIN_ADDRESS
-https://game-api.axie.technology/slp/ronin:RONIN_ADDRESS
-https://game-api.axie.technology/mmr/ronin:RONIN_ADDRESS
-
-https://game-api.axie.technology/api/v1/ronin:RONIN_ADDRESS_1,0xRONIN_ADDRESS_2,ronin:RONIN_ADDRESS_3,0xRONIN_ADDRESS_4
-https://game-api.axie.technology/slp/ronin:RONIN_ADDRESS_1,0xRONIN_ADDRESS_2,ronin:RONIN_ADDRESS_3,0xRONIN_ADDRESS_4
-https://game-api.axie.technology/mmr/ronin:RONIN_ADDRESS_1,0xRONIN_ADDRESS_2,ronin:RONIN_ADDRESS_3,0xRONIN_ADDRESS_4
-```
-
-it does not matter if you use the ronin: or 0x on the address, they both return the same thing. If you want to do multiple addresses at once, just add a comma , after each one
+- Convert Ronin -> 0x Address
+  - replace `ronin:` with `0x`
 
 ### Tech stack
 
 - Nextjs (https://nextjs.org/)
 - SWR (https://swr.vercel.app/)
-- Supabase (https://supabase.io/new) or Sqlite (currently on dev env)
+- Supabase (https://supabase.io/new) or Firebase (https://firebase.google.com/) or Sqlite (currently on dev env)
 - Prismajs (https://www.prisma.io/)
 - Chakra UI (https://chakra-ui.com/)

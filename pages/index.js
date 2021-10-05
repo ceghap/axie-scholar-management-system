@@ -43,7 +43,7 @@ export default function Home({ scholars, ronin }) {
   const [slpMVP, setSlpMVP] = useState(null);
 
   useEffect(() => {
-    if (dataSlp.length > 0 && dataArena.length > 0) {
+    if (dataSlp?.length > 0 && dataArena?.length > 0) {
       setIsLoading(false);
     } else {
       setIsLoading(true);
@@ -79,7 +79,7 @@ export default function Home({ scholars, ronin }) {
         stats,
         [
           function (o) {
-            return o.data.elo;
+            return o.data?.elo;
           },
         ],
         ["desc"]
@@ -130,7 +130,7 @@ export default function Home({ scholars, ronin }) {
     <div>
       {isLoading && <Loader />}
       <Head>
-        <title>Axie Space Guild</title>
+        <title>Axie Scholarship</title>
         <meta name="description" content="ASG Leaderboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -149,18 +149,18 @@ export default function Home({ scholars, ronin }) {
         <Stat>
           <StatLabel>Arena MVP</StatLabel>
           <StatNumber>
-            {dataArena ? dataArena[0].data.elo : "No data"}
+            {dataArena ? dataArena[0]?.data.elo : "No data"}
           </StatNumber>
           <StatHelpText>
-            {dataArena ? dataArena[0].name : "No data"}
+            {dataArena ? dataArena[0]?.name : "No data"}
           </StatHelpText>
         </Stat>
         <Stat>
           <StatLabel>SLP MVP</StatLabel>
           <StatNumber>
-            {dataSlp ? dataSlp[0].data.slp_inventory : "No data"}
+            {dataSlp ? dataSlp[0]?.data?.slp_inventory : "No data"}
           </StatNumber>
-          <StatHelpText>{dataSlp ? dataSlp[0].name : "No data"}</StatHelpText>
+          <StatHelpText>{dataSlp ? dataSlp[0]?.name : "No data"}</StatHelpText>
         </Stat>
       </Flex>
 
@@ -172,10 +172,10 @@ export default function Home({ scholars, ronin }) {
 
         <TabPanels>
           <TabPanel>
-            {dataSlp.length > 0 && <SlpTable data={dataSlp} />}
+            {dataSlp?.length > 0 && <SlpTable data={dataSlp} />}
           </TabPanel>
           <TabPanel>
-            {dataArena.length > 0 && <ArenaTable data={dataArena} />}
+            {dataArena?.length > 0 && <ArenaTable data={dataArena} />}
           </TabPanel>
         </TabPanels>
       </Tabs>

@@ -7,7 +7,7 @@ export default function NavBar() {
     <Box>
       <Container maxW="container.xl">
         <Flex mt="4" align="center">
-          <Box mr="10">Axie Space Guild</Box>
+          <Box mr="10">Axie Scholarship</Box>
           <Link href="/">
             <a>
               <Button mr="4">Leaderboard</Button>
